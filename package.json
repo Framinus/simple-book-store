@@ -1,0 +1,29 @@
+{
+  "name": "simple-book-store",
+  "version": "1.0.0",
+  "description": "A simple book store made with Express and React",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "test": "mocha"
+  },
+  "author": "James McCormack",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10"
+  },
+  "devDependencies": {
+    "ajv": "^5.2.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "mocha": "^4.1.0"
+  }
+}
