@@ -4,6 +4,10 @@
   "description": "A simple book store made with Express and React",
   "main": "src/server.js",
   "scripts": {
+    "create:db": "createdb bookstore",
+    "drop:db": "dropdb bookstore",
+    "load:db": "psql bookstore < ./src/data/model/schema.sql",
+    "seed:db": "psql bookstore < ./src/data/model/seed.sql",
     "start": "node src/server.js",
     "start:dev": "nodemon src/server.js",
     "test": "mocha"
