@@ -8,4 +8,13 @@ router.get('/', (req, res)=>{
     })
 })
 
+router.post('/create', (req, res)=>{
+  const { title, author, genre } = req.body
+  return createBook(title, author, genre)
+    .then(book => {
+      res.json(book)
+    })
+})
+
+
 module.exports = router
