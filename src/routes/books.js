@@ -40,6 +40,33 @@ router.post('/search/genre', (req, res)=>{
     })
 })
 
+router.get('/:id' , (req, res) => {
+  const { id } = req.params
+  return getBookById(id)
+    .then(book => {
+      res.json(book)
+    })
+    .catch(console.error)
+})
 
+router.put('/edit/:id', (req, res) => {
+  const { id } = req.params
+  const { title, author, genre } = req.body
+  return editBookById(id, title, author, genre)
+    .then(book => {
+      res.json(book)
+    })
+    .catch(console.error)
+  
+})
+
+router.delete('/delete/:id', (req, res) => {
+  const { id } = req.params
+  return deleteBookById(id)
+    .then(book => {
+      res.json(book)
+    })
+    .catch(console.error)
+})
 
 module.exports = router

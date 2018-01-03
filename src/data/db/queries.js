@@ -61,7 +61,7 @@ const deleteBookById = (id) => {
   return db.oneOrNone(`
     DELETE FROM books
     WHERE id=$1
-    `, id);
+    RETURNING *`, id);
 };
 
 
