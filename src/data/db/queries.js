@@ -1,35 +1,67 @@
 const db = require('./db');
 
 const createBook = (title, author, genre) => {
-  // add the create book function here.
+  return db.one(`
+    INSERT INTO books (title, author, genre)
+    VALUES($1, $2, $3)
+    RETURNING *`, [title, author, genre])
+    .then(book => book)
+    .catch(console.error);
 };
 
 const getAllBooks = () => {
-  // add the function here.
+  return db.any(`
+    SELECT * FROM books`, [])
+    .then(books => books)
+    .catch(console.error);
 };
 
 const getBookByTitle = (search) => {
-  // add here.
+  const searchTerm = search + '%';
+  return db.any(`
+    SELECT * FROM books
+    WHERE title LIKE $1`, searchTerm)
+    .then(books => books)
+    .catch(console.error);
 };
 
 const getBookByAuthor = (search) => {
-  // add here.
+  const searchTerm = search + '%';
+  return db.any(`
+    SELECT * FROM books
+    WHERE author LIKE $1`, searchTerm)
+    .then(books => books)
+    .catch(console.error);
 };
 
 const getBookByGenre = (search) => {
-  // add here
+  const searchTerm = search + '%';
+  return db.any(`
+    SELECT * FROM books
+    WHERE genre LIKE $1`, searchTerm)
+    .then(books => books)
+    .catch(console.error);
 };
 
 const getBookById = (id) => {
-  // take in id, spit out book.
+  return db.one(`
+    SELECT * FROM books
+    WHERE id=$1`, id);
 };
 
 const editBookById = (id, title, author, genre) => {
-  // take in id, spit out edited book.
+  return db.one(`
+    UPDATE books
+    SET title=$2, author=$3, genre=$4
+    WHERE id=$1
+    RETURNING *`, [id, title, author, genre]);
 };
 
 const deleteBookById = (id) => {
-  // take in id, delete book.
+  return db.oneOrNone(`
+    DELETE FROM books
+    WHERE id=$1
+    `, id);
 };
 
 
