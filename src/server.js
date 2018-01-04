@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use('/', routes)
 
-const port = process.env.PORT || 3000;
+const port = 3001;
 
 
 app.listen(port, () => {
