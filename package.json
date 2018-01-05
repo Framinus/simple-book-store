@@ -8,7 +8,7 @@
     "drop:db": "dropdb bookstore",
     "load:db": "psql bookstore < ./src/data/model/schema.sql",
     "seed:db": "psql bookstore < ./src/data/model/seed.sql",
-    "start": "node src/server.js",
+    "start": "node src/server.js && cd client && react-scripts start",
     "start:dev": "nodemon src/server.js",
     "test": "mocha"
   },
