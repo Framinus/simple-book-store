@@ -13,7 +13,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use('*', cors());
+app.options('*', cors());
 app.use('/', routes);
 
 const port = process.env.PORT || 3001;
