@@ -8,14 +8,14 @@ const cors = require('cors');
 app.use(bodyParser.json())
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://simple-bookstore-api.com',
   optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
 app.use('/', routes);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3001
 
 app.listen(port, () => {
   console.log(`The app is listening on port ${port}`);
