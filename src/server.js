@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(bodyParser.json())
 
 const corsOptions = {
-  origin: 'https://murmuring-beyond-52701.herokuapp.com',
+  origin: 'https://old-oakland-books.herokuapp.com',
   optionsSuccessStatus: 200,
 };
 
