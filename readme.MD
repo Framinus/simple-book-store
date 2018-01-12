@@ -37,10 +37,10 @@ This project is set up for live deployment.
 
 ## Authors
 
-* **James McCormack**
-[Framinus](https://github.com/Framinus)
 * **Mateo Balcorta**
 [Mbalcorta](https://github.com/Mbalcorta)
+* **James McCormack**
+[Framinus](https://github.com/Framinus)
 
 ## License
 
