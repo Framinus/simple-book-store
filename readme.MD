@@ -1,4 +1,4 @@
-# Simple Bookstore
+# Simple Bookstore API
 
 Simple Bookstore is a RESTful API built in Express.js and using PostgreSQL to store data. It follows CRUD principles and consists of the following routes:
 
